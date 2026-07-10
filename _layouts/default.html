@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}{% if page.title %} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.summary | default: site.description }}">
+
+  {% seo %}
+  {% feed_meta %}
+
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}" class="site-nav__home">{{ site.title }}</a>
+      <ul>
+        <li><a href="{{ '/case-studies' | relative_url }}">Case studies</a></li>
+        <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+        <li><a href="{{ '/about' | relative_url }}">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+  </footer>
+
+</body>
+</html>
