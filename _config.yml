@@ -1,0 +1,41 @@
+# Site settings
+title: "Your Name"
+description: >-
+  Content design portfolio and case studies — built with Jekyll,
+  hosted on GitHub Pages.
+url: "https://yourname.com"        # your custom domain, once live
+# baseurl: ""                      # leave commented out — only needed for project sites, not user sites
+
+# Build settings
+markdown: kramdown
+
+# Collections
+collections:
+  case_studies:
+    output: true
+    permalink: /case-studies/:name/
+
+# Default front matter values (optional, saves repeating yourself)
+defaults:
+  - scope:
+      path: ""
+      type: "case_studies"
+    values:
+      layout: "case-study"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Plugins (all on GitHub Pages' supported whitelist — no GitHub Actions build required)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing (keeps the source clean when Jekyll builds)
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
