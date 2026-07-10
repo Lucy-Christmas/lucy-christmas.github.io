@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<article class="case-study">
+
+  <header class="case-study__header">
+    <h1>{{ page.title }}</h1>
+
+    {% if page.summary %}
+      <p class="case-study__summary">{{ page.summary }}</p>
+    {% endif %}
+
+    <dl class="case-study__meta">
+      {% if page.role %}
+        <div>
+          <dt>Role</dt>
+          <dd>{{ page.role }}</dd>
+        </div>
+      {% endif %}
+
+      {% if page.timeline %}
+        <div>
+          <dt>Timeline</dt>
+          <dd>{{ page.timeline }}</dd>
+        </div>
+      {% endif %}
+
+      {% if page.tools %}
+        <div>
+          <dt>Tools</dt>
+          <dd>{{ page.tools | join: ", " }}</dd>
+        </div>
+      {% endif %}
+
+      {% if page.collaborators %}
+        <div>
+          <dt>Collaborators</dt>
+          <dd>{{ page.collaborators | join: ", " }}</dd>
+        </div>
+      {% endif %}
+    </dl>
+  </header>
+
+  <div class="case-study__body">
+    {{ content }}
+  </div>
+
+  {% if page.outcome %}
+    <footer class="case-study__outcome">
+      <h2>Outcome</h2>
+      <p>{{ page.outcome }}</p>
+    </footer>
+  {% endif %}
+
+</article>
